@@ -4,7 +4,8 @@ class MaxHeap:
         self.size = 0
 
     def maximum(self):
-        return self._arr[0]
+        if self._arr:
+            return self._arr[0]
 
     def insert(self, value):
         self._arr.append(value)
@@ -32,7 +33,7 @@ class MaxHeap:
             maximum_index = current_index
             if left_index < self.size and self._arr[left_index] > self._arr[current_index]:
                 maximum_index = left_index
-            if right_index < self.size and self._arr[right_index] > maximum_index:
+            if right_index < self.size and self._arr[right_index] > self._arr[maximum_index]:
                 maximum_index = right_index
             if maximum_index != current_index:
                 temp = self._arr[maximum_index]
