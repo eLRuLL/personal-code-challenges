@@ -1,4 +1,4 @@
-# Numbers are randomly generated and stored into an (expanding) array. How would you keep track of the median?
+"""Numbers are randomly generated and stored into an (expanding) array. How would you keep track of the median?"""
 
 from data_structures.min_heap import MinHeap
 from data_structures.max_heap import MaxHeap
@@ -6,14 +6,14 @@ import random
 
 
 def test_median_with_heaps():
-    l = [random.randint(0, 100) for _ in range(10)]
+    _list = [random.randint(0, 100) for _ in range(10)]
 
     min_heap = MinHeap()
     max_heap = MaxHeap()
 
     ordered_list = []
 
-    for elem in l:
+    for elem in _list:
         ordered_list.append(elem)
         ordered_list = sorted(ordered_list)
         print(elem)
